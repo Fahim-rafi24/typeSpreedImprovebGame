@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="images/play.png" type="image/x-icon">
+    
+    <!-- css link up -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- dasi ui link up -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body onkeypress="handleKeyboarButtonPress(event)">
+    <section class="h-screen flex items-center justify-center bg-[#010313] bg-[url('/images/background.png')] bg-no-repeat bg-center">
+    <!-- Your content goes here -->
+        <!-- entry game field -->
+        <div id="entryField" class="text-center ">
+            <h1 class="text-9xl text-white leading-tight anton">ALPHABET CLASH</h1>
+            <p class="text-lg text-white poppins">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+            <button onclick="openGame()" class="btn btn-wide bg-white text-black mt-5">Play Now</button>
+        </div>
+        <!-- main game field -->
+        <div id="gameField" class="hidden">
+            <!-- display -->
+            <div id="gameFieldDisplay" class="text-center bg-[#e0e0de80] border-8 rounded-3xl border-[#01031399] h-[40vh] w-[60vw] m-auto">
+                <div class="flex justify-center">
+                    <div id="gameFieldDisplay-top" class="text-center poppins bg-[#010313] rounded-b-lg  h-[28px] w-[422px]">Don't watch keyboard  while playing...</div>
+                </div>
+                <div class="text-9xl text-[#1E1E1E] text-center mt-5 uppercase">
+                    <span id="alphabet-display" class="text-gray-800">#</span>
+                    <br>
+                    <span id="alart-section" class="text-red-600 text-3xl"></span>
+                </div>
+            </div>
+            <!-- kbd -->
+            <div>
+                <div class="flex justify-center gap-1 my-1 w-full mt-5">
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">q</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">w</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">e</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">r</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">t</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">y</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">u</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">i</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">o</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">p</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">a</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">s</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">d</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">f</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">g</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">h</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">j</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">k</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">l</kbd>
+                  </div> 
+                  <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">z</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">x</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">c</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">v</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">b</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">n</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">m</kbd>
+                    <kbd class="kbd hover:scale-110 transition duration-300 ease-in-out hover:bg-[#eb8213] hover:text-black">/</kbd>
+                  </div>
+            </div>
+            <!-- life & score btn -->
+            <div class="flex justify-between inter">
+                <button onclick="goToEndPage()" class="btn hover:scale-110 transition duration-300 ease-in-out bg-[#894189] hover:bg-[#66dc517a] hover:text-black w-[150px] rounded-full">
+                    <span>Life</span>
+                    <img src="images/heartsvg.svg" alt="">
+                    <span id="life-score">10</span>
+                </button>
+                <button onclick="goToEndPage()" class="btn hover:scale-110 transition duration-300 ease-in-out bg-[#360490] hover:bg-[#66dc517a] hover:text-black w-[150px] rounded-full">
+                    <span>Score</span>
+                    <img src="images/dollor.svg" alt="">
+                    <span id="score-bar">0</span>
+                </button>
+            </div>
+        </div>
+        <!-- end game field -->
+        <div id="endField" class="border bg-gradient-to-r from-violet-500 to-fuchsia-500 w-[396px] h-[282px] text-center hidden">
+            <h1 class="text-6xl text-white poppins mt-6">Score : <span id="final-score">*##*</span></h1>
+            <button onclick="againOpenGame()" class="btn border-none btn-xs sm:btn-sm md:btn-md lg:btn-lg bg-white text-black hover:text-white mt-6 poppins">Play Again</button>
+            <p class="text-lg text-white mt-6 poppins">Practice will make you Pro</p>
+        </div>
+    </section>
+<!-- js file link up -->
+<script src="js/utility.js"></script>
+<script src="js/scrept.js"></script>
+</body>
+</html>
