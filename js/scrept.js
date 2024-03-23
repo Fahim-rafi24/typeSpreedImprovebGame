@@ -62,39 +62,6 @@ function againOpenGame(){
 
 // key board pressed function
 
-// function handleKeyboarButtonPress(event){
-//     // Check if event is defined and key property exists
-//     if (event && event.key) {
-//         // Keyboard pressed key
-//         const playerPressedKey = event.key;
-//         // Get the text content of the targeted alphabet element
-//         let targetedAlphabet = document.getElementById('alphabet-display').textContent;
-//         // Convert the text content to lowercase
-//         let mainTargetedAlphabet = targetedAlphabet.toLowerCase();
-//         // Check if playerPressedKey value matches mainTargetedAlphabet value
-//         if (playerPressedKey.toLowerCase() === mainTargetedAlphabet) {
-//             console.log('Correct key clicked');
-//             // Correct key clicked
-//             let showAlartMassage = document.getElementById('alart-section');
-//             showAlartMassage.innerText = "";
-//             continueGame();
-//             addPoint();
-//         } else {
-//             // Wrong key clicked
-//             let showAlartMassage = document.getElementById('alart-section');
-//             showAlartMassage.innerText = "Wrong Key was Clicked";
-//             // Decrement the life score
-//             lifeScore();
-//         }
-//     } else {
-//         console.log("No event or event.key found.");
-//     }
-// }
-
-
-
-
-
 function handleKeyboarButtonPress(event){
     // Check if event is defined and key property exists
     if (event && event.key) {

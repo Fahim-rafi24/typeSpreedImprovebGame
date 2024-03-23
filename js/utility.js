@@ -41,14 +41,14 @@ function genarateAlphabet(){
 // life bar function
 function lifeScore() {
     let lifeScore = document.getElementById('life-score');
-    let currentLifeScore = parseInt(lifeScore.innerText); // Get the current value and convert it to an integer
+    let currentLifeScore = parseInt(lifeScore.innerText); 
 
     if (!isNaN(currentLifeScore) && currentLifeScore > 0) {
         // Decrease the value by 1
         currentLifeScore -= 1;
 
         // Update the inner text with the new value
-        lifeScore.innerText = currentLifeScore.toString(); // Convert the new value back to string for display
+        lifeScore.innerText = currentLifeScore.toString(); 
 
         // Check if the life score is zero
         if (currentLifeScore === 0) {
